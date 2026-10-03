@@ -1,0 +1,187 @@
+/* Set the basic style for the whole page */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Set the page background and font */
+body {
+    font-family: Arial, sans-serif;
+    background: #f3eefe;
+    min-height: 100vh;
+    padding: 30px;
+    color: #30243d;
+}
+
+/* Keep the content centered */
+.container {
+    width: 100%;
+    max-width: 850px;
+    margin: auto;
+}
+
+/* Style the main title */
+h1 {
+    text-align: center;
+    color: #6a3dad;
+    font-size: 42px;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+/* Style the subtitle */
+.subtitle {
+    text-align: center;
+    color: #806a99;
+    margin-bottom: 25px;
+}
+
+/* Create the white boxes for each section */
+.card {
+    background: #ffffff;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    border: 1px solid #dfd1f0;
+    box-shadow: 0 5px 18px rgba(91, 52, 140, 0.12);
+}
+
+/* Style the section titles */
+h2 {
+    color: #6a3dad;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Style the smaller headings */
+h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #7447ad;
+}
+
+/* Style the form labels */
+label {
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #49345c;
+}
+
+/* Style the input boxes and dropdowns */
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d4c3e6;
+    border-radius: 8px;
+    font-size: 15px;
+    background: #fcfaff;
+    color: #30243d;
+}
+
+/* Change the input border when selected */
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #8b5bc7;
+    box-shadow: 0 0 0 2px rgba(139, 91, 199, 0.12);
+}
+
+/* Style the text areas */
+textarea {
+    min-height: 150px;
+    resize: vertical;
+    font-family: Consolas, monospace;
+    font-size: 13px;
+}
+
+/* Style all buttons */
+button {
+    width: 100%;
+    padding: 13px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 8px;
+    background: #7042a8;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Change the button color when the mouse is over it */
+button:hover {
+    background: #5d348e;
+}
+
+/* Put the RSA buttons beside each other */
+.button-group {
+    display: flex;
+    gap: 15px;
+}
+
+/* Give both RSA buttons equal space */
+.button-group button {
+    width: 50%;
+}
+
+/* Make the logout button a darker purple */
+.logout {
+    background: #8b3a8b;
+}
+
+/* Change logout button when hovered */
+.logout:hover {
+    background: #6d2d6d;
+}
+
+/* Hide sections when needed */
+.hidden {
+    display: none;
+}
+
+/* Center the messages */
+#message {
+    margin-top: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Style the RSA key size message */
+#keySize {
+    text-align: center;
+    font-weight: bold;
+    color: #7a4bb3;
+}
+
+/* Add a line between account details */
+#userPanel p {
+    padding: 8px;
+    border-bottom: 1px solid #e8def2;
+}
+
+/* Make the page easier to use on phones */
+@media (max-width: 600px) {
+
+    body {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    /* Stack the buttons on smaller screens */
+    .button-group {
+        flex-direction: column;
+    }
+
+    .button-group button {
+        width: 100%;
+    }
+}
