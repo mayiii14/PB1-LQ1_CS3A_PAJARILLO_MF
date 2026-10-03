@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page title -->
+    <title>ENROLLMENT- RSA Sign Up</title>
+
+    <!-- Connect the CSS file -->
+    <link rel="stylesheet" href="sursa.css">
+
+    <!-- JSEncrypt library for RSA encryption -->
+    <script src="https://cdn.jsdelivr.net/npm/jsencrypt@latest/bin/jsencrypt.min.js"></script>
+</head>
+
+<body>
+
+    <!-- Main container of the page -->
+    <div class="container">
+
+        <!-- Page heading -->
+        <h1>ENROLLMENT</h1>
+        <p class="subtitle">RSA Encryption Sign Up System</p>
+
+        <!-- Sign-up form -->
+        <div id="signupPanel" class="card">
+
+            <h2>CREATE ACCOUNT</h2>
+
+            <!-- User's full name -->
+            <label for="name">Full Name</label>
+            <input
+                type="text"
+                id="name"
+                placeholder="Enter your full name"
+            >
+
+            <!-- User's birthday -->
+            <label for="birthday">Date of Birth</label>
+            <input
+                type="date"
+                id="birthday"
+            >
+
+            <!-- Choose the year level -->
+            <label for="yearLevel">Year Level</label>
+            <select id="yearLevel">
+                <option value="">Select Year Level</option>
+                <option value="1st Year">1st Year</option>
+                <option value="2nd Year">2nd Year</option>
+                <option value="3rd Year">3rd Year</option>
+                <option value="4th Year">4th Year</option>
+            </select>
+
+            <!-- Choose the gender -->
+            <label for="gender">Gender</label>
+            <select id="gender">
+                <option value="">Select Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Prefer not to say">Prefer not to say</option>
+            </select>
+
+            <!-- Username -->
+            <label for="username">Username</label>
+            <input
+                type="text"
+                id="username"
+                placeholder="Enter username"
+            >
+
+            <!-- Password -->
+            <label for="password">Password</label>
+            <input
+                type="password"
+                id="password"
+                placeholder="Enter password"
+            >
+
+            <!-- Button for creating an account -->
+            <button onclick="signUp()">SIGN UP</button>
+
+            <!-- Shows messages to the user -->
+            <p id="message"></p>
+        </div>
+
+        <!-- RSA encryption and decryption section -->
+        <div id="rsaPanel" class="card hidden">
+
+            <h2>RSA ENCRYPTION / DECRYPTION</h2>
+
+            <p>
+                Select an RSA key size to encrypt and decrypt
+                the account information.
+            </p>
+
+            <!-- Choose the RSA key size -->
+            <div class="button-group">
+
+                <button onclick="generateRSA(1024)">
+                    RSA 1024-BIT
+                </button>
+
+                <button onclick="generateRSA(3072)">
+                    RSA 3072-BIT
+                </button>
+
+            </div>
+
+            <!-- Shows the selected key size -->
+            <h3>Selected RSA Key Size</h3>
+            <p id="keySize">No RSA key generated.</p>
+
+            <!-- Shows the encrypted information -->
+            <h3>ENCRYPTED DATA</h3>
+
+            <textarea
+                id="encryptedData"
+                readonly
+                placeholder="Encrypted data will appear here..."
+            ></textarea>
+
+            <!-- Shows the decrypted information -->
+            <h3>DECRYPTED DATA</h3>
+
+            <textarea
+                id="decryptedData"
+                readonly
+                placeholder="Decrypted data will appear here..."
+            ></textarea>
+
+            <!-- Logout button -->
+            <button class="logout" onclick="logout()">
+                LOGOUT
+            </button>
+
+        </div>
+
+        <!-- Shows the user's account information -->
+        <div id="userPanel" class="card hidden">
+
+            <h2>ACCOUNT INFORMATION</h2>
+
+            <p>
+                <strong>Full Name:</strong>
+                <span id="displayName"></span>
+            </p>
+
+            <p>
+                <strong>Date of Birth:</strong>
+                <span id="displayBirthday"></span>
+            </p>
+
+            <p>
+                <strong>Year Level:</strong>
+                <span id="displayYear"></span>
+            </p>
+
+            <p>
+                <strong>Gender:</strong>
+                <span id="displayGender"></span>
+            </p>
+
+            <p>
+                <strong>Username:</strong>
+                <span id="displayUsername"></span>
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- Connect the JavaScript file -->
+    <script src="sursa.js"></script>
+
+</body>
+</html>
